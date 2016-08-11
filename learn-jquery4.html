@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>Learn JQuery-4</title>
+</head>
+
+<body>
+<div class="container">
+	<ul id="orderprice"></ul>
+	<ul id="ordername"></ul>
+	<form>
+		<select class='form-control'></select>
+	</form>
+	<div id='result'>	</div>
+
+</div>
+
+<script type="text/javascript">
+	$(start)
+	function start() {
+		$.get('http://icode.run:4000/table').done(show)
+	}
+
+	function show(data) {
+		data.sort(compare)
+
+		for(var i = 0; i < data.length; i++) {
+			$('ul#orderprice').append('<li>' + data[i].name + ' - ' + data[i].price + '</li>')
+		}
+
+		data.sort(comparename)
+
+		for(var i = 0; i < data.length; i++) {
+			$('ul#ordername').append('<li>' + data[i].name + ' - ' + data[i].price + '</li>')
+		}
+
+		for(var i = 0; i < data.length; i++) {
+			$('select').append('<option>' + data[i].name + '</option>')
+		}
+
+	}
+
+	function compare(a,b) {
+		return a.price - b.price
+	}
+
+	function comparename(x,y) {
+		if(x.name == y.name) {return 0;}
+		if (x.name < y.name) {return -1;}
+		if (x.name > y.name) {return +1;}
+	}
+
+
+</script>
+
+</body>
+</html>

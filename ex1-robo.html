@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 1 - Robot</title>
+</head>
+<body>
+<script type="text/javascript">
+	function walk(s) {
+		var x = 0;
+		var y = 0;
+		for(i=0; i < s.length; i++) {
+			if(s[i] == "N") { y++ };
+			if(s[i] == "S") { y-- };
+			if(s[i] == "E") { x++ };
+			if(s[i] == "W") { x-- };			
+		}
+
+		return Math.sqrt(x*x + y*y);
+	}
+
+	function abtesting(s) {
+		var a = 0;
+		var b = 0;
+
+		for(i=0; i < s.length; i++) {
+			if(s[i] == "A") { a++ }
+			if(s[i] == "B") { b++ }
+		}
+		if(a > b) { return 'A'}
+		if(a < b) { return 'B'}
+		if(a == b) { return 'Even'}
+	}
+
+	x = prompt("Input string A/B");
+	alert("Result is " + abtesting(x));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+bit 0/1
+4-bit = 1 nibble
+8-bit = 1 byte or 2 nibble
+
+pixel
+- monochrome 1-bit
+- grayscale 2x 8-bit
+- color RGB 3x 8-bit
+
+---
+color code
+1. color name
+2. rgb()
+3. rgba()
+4. #xxyyzz
+5. #xyz
+
+---
+font color recommend is #222
+
+---
+Front-end framework
+- bootstrap -- http://getbootstrap.com/
+- foundation -- http://foundation.zurb.com/
+- materialize -- http://materializecss.com/
+
+---
+install JavaScript on server (Node.js)
+# apt-get install npm
+# npm install -g n
+# n latest 
+# n stable
+
+# npm install -g vtop 
+
+--- html style property
+- transition: background 0.5s linear;
+- opacity: 0.0 / 1.0
+- border-radius
+- hover
+- active
+
+---
+Math.PI
+Math.sqrt
+
+-- Array
+.push() - add data to array
+.pop() - remove last array
+.shift() - remove first array
+.unshift() - add first array
+.sort() - sort array by character alphabet
+
+-- Array sample on icode.run -- https://icode.run/code/818  -- 810-820
+
+-- convert string to array
+var s='hello'
+s.split('')
+
+-- convert array to string
+var a=[2,4,6]
+a.join('')
+
+
+-- JQuery
+$('button').html('value') -- set the value
+$('button').html() -- read the value
+$().val() -- set/read value
+$('select').append('<option>Americano</option>')  -- append data a the end
+$().prepend() -- insert data on top
+$().click()
+$().submit()
+$().change()
+$().get()
+$().done()
+
+-- Nodejs / Express -- icode.run/code/830 831 
+npm install 
+npm install express
+npm install ejs
+
+-- MongoDB  -- https://docs.mongodb.com/manual/crud/
+show dbs
+use coffee_shop  -- create and use the db
+db.coffee.insert({ xxx: 'xxx', })
+
+--

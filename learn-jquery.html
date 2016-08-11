@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>Learn JQuery</title>
+	<style type="text/css">
+		.formcontrol {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>Learn about JQuery</h1>
+
+	<div class="btn-group">
+		<button id='home' class="btn btn-info">Home</button>
+		<button id='setting' class="btn btn-info">Setting</button>
+		<button id='refresh' class="btn btn-info">Refresh</button>
+	</div>
+	<br><br>
+
+	<input class="form-control" placeholder="รหัสไปรษณีย์"><br>
+
+	<select id="coffee" class="form-control">
+		<option>Latte</option>
+		<option>Mocha</option>
+		<option>Capuccino</option>
+		<option class="active">Espresso</optgroup>
+
+	</select>
+	<br>
+
+	<select id='branches' class="form-control">	
+	</select>
+	<br>
+
+	<ol>
+		<li>Latte</li>
+		<li>Macha</li>
+		<li>Espresso</li>
+	</ol>
+	<br>
+
+	<ul id='coffeedrink'>
+	</ul>
+
+	<script type="text/javascript">
+
+			var branch = ["Dusit", "Bangrak","Bangkapi"]
+			var coffee = [
+				{name:'Latte', price:110},
+				{name:'Mocha', price:125},
+				{name:'Iced Coffee', price:100}
+			]
+
+/*		var data = {
+			"Bangkok": ["Dusit","Bangrak","Bangkapi"],
+			"Chonburi":["Pattaya","Sriracha"]
+		}
+*/
+		$(main)
+
+		function main() {
+			$('input').val('10500')
+			$('select').val('Espresso')
+			$('button#home').html('บ้าน')
+			$('button#setting').html('ตั้งค่า')
+			$('button#refresh').html('รีเฟรช')
+			$('select#coffee').append('<option>Americano</option>')
+			$('ol').prepend('<li>Americano</li>')
+
+			for(var i=0; i < branch.length; i++) {
+				$('select#branches').append('<option>' + branch[i]+ '</option>')
+			}
+
+			for(var i=0; i < coffee.length; i++) {
+				$('ul#coffeedrink').append('<li>' + coffee[i].name + ' - ' + coffee[i].price + '</li>')
+			}
+		}
+
+
+//		var t = $('button').html();
+//		alert(t)
+	</script>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+		function area(r) {
+			return Math.PI * r * r
+		}
+
+		function total(p) {
+			return p * 1.07
+		}
+
+		function max(x,y) {
+			if( x > y) {
+				return x
+			} else	{
+				return y
+			}
+		}
+
+		function max3(x,y,z) {
+			a = max(x,y)
+			return max(a,z)
+		}
+
+
+		var x = prompt('ป้อนตัวเลขแรก')
+		var y = prompt('ป้อนตัวเลขที่ ๒')
+		var z = prompt('ป้อนตัวเลขที่ ๓')
+
+		alert('เลขระหว่าง '+x+', '+y+', '+z+' เลขที่มากที่สุด คือ ' +max3(x,y,z))
+
+	</script>
+</body>
+</html>

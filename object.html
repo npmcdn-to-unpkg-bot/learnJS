@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object</title>
+</head>
+<body>
+	<script>
+		var c = {};
+		c.name="Capuccino";
+		c.size="Tall";
+		c.price=110;
+		c.specialPrice = function() { return this.price * 0.9; }
+
+		var m = {name:"Macha", size:"Tall", price:125};
+		console.log(c);
+		console.log(m);
+		console.log(c.specialPrice())
+	</script>
+</body>
+</html>

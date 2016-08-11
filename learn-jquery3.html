@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>Learn JQuery-3</title>
+
+</head>
+<body>
+<div class="container">
+	<ul></ul>
+	<form>
+		<select class='form-control'></select>
+	</form>
+</div>
+
+<script type="text/javascript">
+	$(start)
+	function start() {
+		$.get('http://icode.run:4000/coffee').done(show)
+	}
+
+	function show(data) {
+		for(var i = 0; i < data.length; i++) {
+			$('ul').append('<li>' + data[i] + '</li>')
+		}
+
+		for(var i = 0; i < data.length; i++) {
+			$('select').append('<option>' + data[i] + '</option>')
+		}
+
+	}
+
+
+</script>
+
+</body>
+</html>

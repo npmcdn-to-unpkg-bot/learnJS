@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Array
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sum(a) {
+			sum = 0;
+			for(i=0; i < a.length; i++) {
+				sum +=a[i];
+			}
+			return sum;
+		}
+
+		function maximum(a) {
+			var max = a[0];
+			for (i = 1; i < a.length; i++) {
+				if(max < a[i]) {
+					max = a[i];
+				}
+			}
+			return max;
+		}
+
+		function reverse(a) {
+			var checkpoint = a.length / 2
+			var x = a.length - 1
+
+			for(i = 0; i < checkpoint; i++) {
+				temp = a[i];
+				a[i] = a[x];
+				a[x] = temp;
+				x--
+			}
+			return a;
+		}
+
+		function divider(a) {
+			var d = [];
+			for (i = 1; i <= n; i++) {
+				if (n % i == 0) {
+					d.push(i);
+				}
+			}
+			return d
+		}
+
+		function compare(a,b) {
+			if(a == b) return 0
+			if(a < b) return -1
+			if(a > b) return 1
+		}
+
+		function median(a) {
+			a.sort(compare);
+			console.log(a);
+			if(a.length % 2 == 0) {
+				return (a[a.length/2-1] + a[a.length/2]) /2
+			}
+			return a[(a.length-1)/2]
+		}
+
+		var a = [2, 6, 1, 4, 20, 40, 12, 13]
+		var x = median(a);
+		console.log(x);
+		a.push(90);
+		x = median(a);
+		console.log(x);
+
+// add data to array
+		var b = [];
+		console.log(b);
+		b.push(3);
+		console.log(b);
+		b.push(6)
+		console.log(b);
+
+// remove last array
+		var b = []
+		b.push(5);
+		b.push(7);
+		console.log(b);
+		b.pop();
+		console.log(b);
+		b.push(10);
+		console.log(b);
+		b.shift();
+		console.log(b);
+		b.unshift(12);
+		console.log(b);
+
+// array non-integer 
+		var zip = [];
+		zip.bangrak = '10500'
+		zip['dusit'] = '10300'
+
+		for(var k in zip){
+		    console.log(k)
+		    console.log(zip[k])
+		}
+
+
+		var data = ['Latte', 'Mocha', 'Latte', 'Americano', 'Mocha', 'Latte', 'Mocha', 'Latte', 'Americano', 'Mocha',
+		'Latte', 'Mocha', 'Latte', 'Americano', 'Americano', 'Mocha', 'Latte', 'Mocha', 'Latte', 'Americano', 'Espresso']
+
+    var c = { }
+    for (var i = 0; i < data.length; i++) {
+        if (c[data[i]] == null) {
+            c[data[i]] = 1
+        } else {
+            c[data[i]]++
+        }
+    }
+    console.log(c)
+    console.log("-------")
+
+// object and array sample
+		console.log("--- Object and Array sample... ---")
+    var aa = [ 
+    	{name:'latte', price:80},
+    	{name:'espresso', price:70},
+    	{name:'mocha', price:90},
+    	{name:'tea', price:30}]
+
+    console.log(aa[1])
+    console.log(aa[1].price)
+
+// find out highest and lowest price
+		console.log("--- Highest/Lowest ---")
+
+		var index = 0
+		for (var i = 1; i < aa.length; i++) {
+			if (aa[i].price < aa[index].price) {
+				index = i;
+			}
+		}
+		console.log(aa[index].name)
+
+// sort price
+		console.log("--- Sort price ---")
+
+// split
+		console.log("--- split ---")
+		var s = 'Latte=80;Mocha=90;Espresso=70'
+		var x = s.split(";")
+		var result = []
+
+		console.log(x);
+
+		for(i=0; i < x.length; i++){
+			var y = x[i].split('=')
+			var o = { }
+			o.name = y[0]
+			o.price = parseInt(y[1])
+			result.push(o)
+		}
+
+		console.log(result)
+
+	</script>
+
+</body>
+</html>

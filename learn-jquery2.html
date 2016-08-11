@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<title>Learn JQuery-2</title>
+
+</head>
+<body>
+
+<div class="container">
+	<form>
+		<input placeholder="กรุณาใส่ชื่ออำเภอ" class="form-control" autofocus>
+		<button type="submit" class="btn btn-primary">Search</button>
+		<select></select>
+	</form>
+	<div id="result"></div>
+
+</div>
+
+
+	
+	<script type="text/javascript">
+		var data = {
+			'บางรัก': '10500',
+			'ดุสิต': '10300'
+		}
+
+		for(var k in data) {
+			$('select').append('<option>'+ k + '</option>')
+		}
+
+		$('select').change(query)
+
+		function query() {
+			var s = $('select').val()
+			$('input').val(s)
+			search()
+
+		}
+
+		$('button').click(search)
+		$('form').submit(search)
+
+		function search() {
+			var s = $('input').val()
+			var c = data[s]
+			if (c == null) {
+				c = "not found"
+			}
+			$('#result').html(c)
+			return false;
+
+		}
+
+	</script>
+
+</body>
+</html>
