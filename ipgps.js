@@ -1,3 +1,5 @@
+// npm: jquery http
+
 const http = require('http');
 var $ = require('jquery');
 
