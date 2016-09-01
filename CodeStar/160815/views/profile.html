@@ -1,0 +1,22 @@
+<% include header.html %>
+	<div class="container">
+		<div class="btn-group">
+			<a class="btn btn-default" href="/">Home</a>
+			<a class="btn btn-default" href="/profile">Profile</a>
+			<a class="btn btn-default" href="/chat">Chat</a>
+			<a class="btn btn-default" href="/logout">Logout</a>
+		</div>
+		
+		<h3>Hello <%= user.name %> </h3>
+		<hr>
+		<h3>Setting</h3>
+		<form accept="post" enctype="multipart/form-data">
+				<input class="form-control" name="user" value="<%= user.name %>">
+				<input class="form-control" name="photo" type="file">
+				<button type="submit">Update</button>
+
+		</form>
+
+
+	</div>
+<% include footer.html %>

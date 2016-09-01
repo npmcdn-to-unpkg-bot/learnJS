@@ -1,0 +1,41 @@
+
+<html>
+  <head>
+		<meta charset="utf-8" />
+		<title>React Tutorial</title>
+		<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
+		<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+		<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+		<link rel='stylesheet' href='https://icode.run/bootstrap/css/bootstrap.min.css' />
+		<script src='https://icode.run/jquery.js'></script>
+	</head>
+	<body>
+		<div id="content"></div>
+		<script type="text/babel">
+			class Coffee extends React.Component {
+				constructor() {
+					super()
+					this.data = [ ]
+					$.get('http://icode.run:4000/coffee')
+					.done( data => this.show(data) )
+				}
+				show(data) {
+					this.data = data
+					this.setState({})
+				}
+				render() {
+					let list = [ ]
+					for (let i of this.data) {
+						list.push(<li key={i}>{i}</li>)
+					}
+					return <ul>{list}</ul>
+				}
+			}
+			ReactDOM.render(<Coffee />,
+				document.getElementById('content'))
+		</script>
+	</body>
+</html>
+
+
+

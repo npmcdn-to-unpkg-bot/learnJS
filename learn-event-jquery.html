@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo - jQuery Event</title>
+
+	<script src="js/jquery-3.1.0.min.js"></script>
+
+</head>
+<body>
+
+	<button id='load-coffee'>Load Coffee</button>
+	<select id='coffee-list'></select>
+
+	<script>
+
+		$('#load-coffee').click(load)
+		$('#coffee-list').change(order)
+
+		function load() {
+			$.get('http://icode.run:4000/coffee').done(update)
+		}
+
+		function update(data) {
+			for (var i = 0; i < data.length; i++) {
+				var s = '<option>' + data[i] + '</option>'
+				$('#coffee-list').append(s)			
+			}
+		}
+
+		function order() {
+			var c = $('#coffee-list').val()
+			alert('Order ' +c)
+		}
+
+	</script>
+
+</body>
+</html>

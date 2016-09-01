@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo React</title>
+	<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
+	<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+	<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+	<script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+	<script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+</head>
+
+<body>
+
+<div id="content"></div>
+
+<script type="text/babel">
+	class CoffeeList extends React.Component {
+		render() {
+
+			return <select onChange = { e => this.show(e)}>
+				<option>Latte</option>
+				<option>Mocha</option>
+		}
+
+		show(e) {
+			alert('Order ' + e.target.value)
+		}
+	}
+
+
+	ReactDOM.render( <CoffeeList /> , document.getElementById('content') )
+
+</script>
+
+</body>
+</html>

@@ -84,4 +84,58 @@ show dbs
 use coffee_shop  -- create and use the db
 db.coffee.insert({ xxx: 'xxx', })
 
---
+-- React icode.run/code/307
+
+-- Event
+- HTML
+onclick = fn
+onchange = fn
+onkeypress = fn
+onkeyup = fn
+onkeydown = fn
+
+- jQuery
+id ==> $('#id').click()
+.change()
+.keydown()
+.keyup()
+.keypress()
+
+- React
+onClick = {}
+onChange = {}
+onKeyUp = {}
+onKeyDown = {}
+onKeyPress = {}
+onSubmit = {}
+https://icode.run/code/310
+
+
+--- Angular -- https://angular.io/
+JavaScript
+ES6 --> JS+Class
+Dart
+-
+{{x}}
+(click)=
+* template
+#localVariable
+
+-- Test Automation by Phantom JS http://phantomjs.org/
+# npm install phantomjs
+# phantomjs test1.js
+
+
+-- Summary
+- Sequence; a->b->c
+- Selection; if-else
+- Iteration;
+-- While loop
+-- Do loop
+-- For loop
+
+x ? y : z
+Ex. return a > b ? a : b;
+
+
+support@codestar.work

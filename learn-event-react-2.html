@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React exercise</title>
+
+	<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
+	<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+	<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+	<script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+	<script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+</head>
+
+<!-- icode.run/code/312 -->
+
+<body>
+	<div id="content"></div>
+
+	<script type="text/babel">
+		class CoffeeList extends React.Component {
+			render() {
+				let list = []
+				for (let c of this.data) {
+					list.push(<tr>
+						<td>{c.name}</td>
+						<td>{c.price}</td>
+					</tr>)
+				}
+				return <div>
+					<button className='btn btn-primary' onClick = { () => this.refresh()}>Refresh</button>
+					<table className="table">
+						<thead>
+							<tr>	
+								<th>Name</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							{list}
+						</tbody>
+					</table>
+				</div>
+
+			}
+
+			refresh() {
+				$.get('http://icode.run:4000/table')
+				.done( d => {
+					this.data = d
+					this.setState({})
+				})
+			}
+
+			constructor() {
+				super()
+				this.data = [ ]
+
+			}
+		}
+
+		var c = document.getElementById('content')
+		ReactDOM.render( <CoffeeList />, c);
+
+	</script>
+
+</body>
+</html>

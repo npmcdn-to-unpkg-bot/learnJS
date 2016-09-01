@@ -1,0 +1,27 @@
+<% include header.html %>
+
+<div class="container">
+	<form action='javascript:search()'>
+		<input type="text" id="city" class="form-control" autofocus="autofocus" placeholder="Please input city">
+		<button class="btn btn-primary" type='submit'>Search</button>
+	</form>
+
+	<p id='result'></p>
+
+</div>
+
+<script type="text/javascript">
+	function search() {
+		var c = $('#city').val()
+		var url = '/api/zip?city=' + c
+		$.get(url).done(show)
+
+	}
+
+	function show(data) {
+		$('#result').html("The zip code is " + data.result)
+	}
+
+</script>
+
+<% include footer.html %>

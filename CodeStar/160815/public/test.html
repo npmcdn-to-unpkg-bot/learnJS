@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result from Form</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<p>Form</p>
+
+	<form action="javascript:order()">
+			<input type="radio" name="coffee" value="Latte" id="latte"><label for="latte">Latte</label>
+			<input type="radio" name="coffee" value="Mocha" id="mocha"><label for="mocha">Mocha</label>
+			<input type="radio" name="coffee" value="Espresso"> Espresso
+			<br>
+			<input type="checkbox" name="WhippedCream"> Whipped Cream
+			<input type="checkbox" name="CoffeeJelly"> Coffee Jelly
+			<br>
+			<input type="radio" name="milk-type">Whole Milk
+			<input type="radio" name="milk-type">Non-fat Milk
+			<input type="radio" name="milk-type">Soy Milk
+			<br>
+			<button type="submit">Order</button>
+	</form>
+</div>
+
+<script type="text/javascript">
+	function order() {
+		alert("Order")
+	}
+</script>
+</body>
+</html>

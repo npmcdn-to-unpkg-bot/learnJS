@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Angular 2</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<h1>Learning Angular 2</h1>
+
+	<coffee-panel></coffee-panel>
+
+<!--	
+	<coffee-table></coffee-table>
+	<coffee-list></coffee-list>
+	<test></test>
+	<app></app>
+	<coffee></coffee>
+	<pizza></pizza>
+ -->
+
+	<script src="https://code.angularjs.org/tools/system.js"></script>
+	<script src="https://code.angularjs.org/tools/typescript.js"></script>
+	<script src="https://code.angularjs.org/2.0.0-beta.17/angular2-polyfills.min.js"></script>
+	<script src="https://code.angularjs.org/2.0.0-beta.17/Rx.min.js"></script>
+	<script src="https://code.angularjs.org/2.0.0-beta.17/angular2.min.js"></script>
+
+	<script>
+		System.config({
+			transpiler: 'typescript',
+			typescriptOptions: { emitDecoratorMetadata: true }
+		});
+
+		System.import('./coffee-panel.js')
+
+/*		
+		System.import('./coffee-table.js')
+		System.import('./coffee-list.js')
+		System.import('./test1.js')
+		System.import('./component.js');
+		System.import('./coffee.js')
+		System.import('./pizza.js')
+*/
+
+
+	</script>
+</body>
+</html>

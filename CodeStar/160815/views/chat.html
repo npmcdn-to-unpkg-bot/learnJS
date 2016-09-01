@@ -1,0 +1,38 @@
+<% include header.html %>
+<style type="text/css">
+	form {
+		max-width: 100%;
+		padding: 10px;
+	}	
+	
+</style>
+
+<div class="container">
+
+<form action="javascript:send()">
+<textarea class="form-control" id='history'></textarea>	
+<input class="form-control" autofocus placeholder="Type message here." id='msg'>
+<button class="btn btn-primary" type="submit">Send</button>	
+</form>
+</div>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script>
+	var socket = io.connect('/')
+//	socket.send({email: '<%= user.email %>'})
+	socket.send({action: 'email', value: '<%= user.email %>'})
+	socket.on('message', m => {
+		var s = $('#history').val()
+		s += m + '\n'
+		$('#history').val(s)
+	})
+
+	function send() {
+		var s = $('#msg').val()
+		$('#msg').val('')
+		socket.send(s)
+	}
+
+</script>
+
+<% include footer.html %>
